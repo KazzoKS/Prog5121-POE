@@ -79,6 +79,7 @@ public class Login {
      * Cell phone number must contain the international country code
      * followed by the number, which is no more than ten characters long.
      */
+    // Validates South African cell number format using regex
     public boolean checkCellPhoneNumber() {
         return cellPhoneNumber != null && CELL_PATTERN.matcher(cellPhoneNumber).matches();
     }
