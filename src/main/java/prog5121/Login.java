@@ -43,6 +43,7 @@ public class Login {
      * Username must contain an underscore and be no more than five
      * characters long.
      */
+    // Validates that username is no more than 5 characters and contains an underscore
     public boolean checkUserName() {
         return username != null
                 && username.contains("_")
