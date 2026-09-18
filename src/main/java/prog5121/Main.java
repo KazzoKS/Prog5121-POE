@@ -1,3 +1,4 @@
+// Entry point: runs the console menu for registration and login
 package prog5121;
 
 import java.util.Scanner;
