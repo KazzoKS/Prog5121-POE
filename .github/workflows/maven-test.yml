@@ -1,0 +1,24 @@
+name: Run Maven Tests
+
+on:
+  push:
+    branches: [ "master", "Part2-SendingMessages" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Run tests with Maven
+        run: mvn test
