@@ -81,6 +81,7 @@ public class Message {
         return "Message exceeds 250 characters by " + excess + "; please reduce the size.";
     }
 
+    // Builds the message hash required by the task sheet (ID prefix: message number : first+last word)
     public String createMessageHash() {
         String idPrefix = messageID.length() >= 2 ? messageID.substring(0, 2) : messageID;
         String[] words = messageText.trim().split("\\s+");
@@ -90,6 +91,7 @@ public class Message {
         return this.messageHash;
     }
 
+    // Handles the user's choice to send, disregard, or store a message
     public String sentMessage(int choice) {
         if (messageHash == null) {
             createMessageHash();
